@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link href="{{ url_for('static', filename='home.css') }}" rel="stylesheet">
+    <meta charset="utf-8">
+
+    <title>Page Title</title>
+
+    <!-- description text that displays below the link in google search results -->
+    <meta name="description" content="Description of site"/>
+
+</head>
+
+<body>
+
+<section class="page-wrap">
+
+
+    <header> <!-- Defining the header section of the page with the appropriate tag -->
+
+        <div>
+            <h1>COVID-19 (कोभीड-१९)</h1>
+            <p>गो कोरोना... कोरोना गो</p>
+        </div>
+
+        <nav> <!-- The nav link semantically marks your main site navigation -->
+            <ul>
+                <li><a href="{{ url_for('home') }}">Home</a></li>
+                <li><a href="https://www.mohp.gov.np/en/" target="_blank">MoHP</a></li>
+                <li><a href="https://www.worldometers.info/coronavirus/" target="_blank">Worldometer</a></li>
+            </ul>
+        </nav>
+    </header>
+
+
+    <article id="block1" class="module-block">
+
+        <h2>के हो कोरोना भाईरस?</h2>
+        <img class="right" src="{{ url_for('static', filename='virus.jpg') }}" align="center" height="150px"
+             width="150px"/>
+
+        <p>हाल विश्वभरी फैलिरहेका नयाँ कोरोना भाइरसको संक्रमणबाट लागेको रोगलाई विश्व स्वास्थ्य संगठनले “कोभिड १९” को नाम
+            दिएको छ र यसलाई विश्वव्यापी महामारीको रुपमा घोषणा गरिसकिएको छ ।कोरोना भाइरस श्वाशप्रश्वाशको माध्यमबाट सर्ने
+            रोग हो । यो संक्रमित व्यक्त्तिले खोक्दा वा हाछ्युँ गर्दा नाक वा मुखबाट निस्कने छिट्टाको माध्यमबाट एक
+            व्यक्त्तिबाट अर्को व्यक्त्तिमा सर्दछ ।
+            यो नयाँ प्रजातिको भाइरस हो जुन मानव जातिमा पहिले पहिचान भएको थिएन। यस भाइरसले मानिस र पशुहरूमा संक्रमण
+            गर्दछ। यस भाइरसले सामान्य रुघाखोकी देखि गम्भीर प्रकारको तीव्र श्वासप्रश्वास Severe Acute Respiratory
+            Syndrome (SARS) सम्म गराउन सक्दछ ।</p>
+
+    </article>
+
+    <section id="block2" class="module-block">
+
+				<h2>नेपालको पछिल्लो तथ्यांक</h2>
+
+			   	<article class="post">
+                    <h3>संक्रमित: {{ data.confirmed }}</h3>
+                    <h3>निको भएको: {{ data.recovered }} </h3>
+                    <h3>मृत्यु भएको: {{ data.deaths }}</h3>
+				</article>
+
+			</section>
+
+    <footer>
+
+        <p>Copyright 2020 - <a href="mailto:">dipeshbasnet1997gmail.com</a></p>
+        <p>Fuck Corona</p>
+        <p class="up"><a href="#">Go Up ⇪</a></p>
+
+    </footer>
+
+
+</body>
+</html>

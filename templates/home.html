@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link href="{{ url_for('static', filename='home.css') }}" rel="stylesheet">
+    <meta charset="utf-8">
+
+    <title>Page Title</title>
+
+    <!-- description text that displays below the link in google search results -->
+    <meta name="description" content="Description of site"/>
+
+</head>
+
+<body>
+
+<section class="page-wrap">
+
+
+    <header> <!-- Defining the header section of the page with the appropriate tag -->
+
+        <div>
+            <h1>COVID-19 (कोभीड-१९)</h1>
+            <p>गो कोरोना... कोरोना गो</p>
+        </div>
+
+        <nav> <!-- The nav link semantically marks your main site navigation -->
+            <ul>
+                <li><a href="{{ url_for('nepal') }}">Nepal stats</a></li>
+                <li><a href="https://www.mohp.gov.np/en/" target="_blank">MoHP</a></li>
+                <li><a href="https://www.worldometers.info/coronavirus/" target="_blank">Worldometer</a></li>
+            </ul>
+        </nav>
+    </header>
+
+
+    <article id="block1" class="module-block">
+
+        <h2>What is Coronavirus?</h2>
+        <img class="right" src="{{ url_for('static', filename='virus.jpg') }}" align="center" height="150px"
+             width="150px"/>
+
+        <p>Coronavirus disease (COVID-19) is an infectious disease caused by a newly discovered coronavirus.
+
+            Most people infected with the COVID-19 virus will experience mild to moderate respiratory illness and
+            recover without requiring special treatment. Older people, and those with underlying medical problems like
+            cardiovascular disease, diabetes, chronic respiratory disease, and cancer are more likely to develop serious
+            illness.
+
+            The best way to prevent and slow down transmission is be well informed about the COVID-19 virus, the disease
+            it causes and how it spreads. Protect yourself and others from infection by washing your hands or using an
+            alcohol based rub frequently and not touching your face. </p>
+
+    </article>
+
+    <table id="all" style="border-collapse: collapse; width: 100%;">
+          <tr style="border: 1px solid #ddd; padding: 8px;">
+            <th>Country</th>
+            <th>Confirmed Cases</th>
+            <th>Recovered</th>
+            <th>Critical</th>
+            <th>Deaths</th>
+          </tr>
+        {%  for country in countries %}
+            <tr>
+            <td>{{ country.country }}</td>
+            <td>{{ country.confirmed }}</td>
+            <td>{{ country.recovered }}</td>
+            <td>{{ country.critical }}</td>
+            <td>{{ country.deaths }}</td>
+          </tr>
+        {% endfor %}
+
+    </table>
+
+</section><!-- page-wrap -->
+
+
+<footer>
+
+    <p>Copyright 2020 - <a href="mailto:">dipeshbasnet1997gmail.com</a></p>
+    <p></p>
+    <p class="up"><a href="#">Go Up ⇪</a></p>
+
+</footer>
+
+
+</body>
+</html>
